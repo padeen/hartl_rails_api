@@ -14,6 +14,12 @@ class MicropostsController < ApplicationController
     end
   end
 
+  def destroy
+    @micropost = @user.microposts.find(params[:id])
+
+    @micropost.destroy
+  end
+
   private
     def set_user
       @user = User.find(1)
